@@ -1,0 +1,200 @@
+/* =========================================================
+   Dental Smile Pattaya - Theme (theme.css)
+   ========================================================= */
+
+/* ---------- CSS Variables ---------- */
+:root{
+  --dp-primary:#5fb6d6;
+  --dp-deep:#2a6f97;
+  --dp-soft:#eaf6fb;
+  --dp-accent:#7dd3fc;
+  --dp-dark:#10364a;
+}
+
+/* ---------- Utilities ---------- */
+.text-dp-primary{ color: var(--dp-primary)!important; }
+.text-dp-deep{ color: var(--dp-deep)!important; }
+.text-dp-dark{ color: var(--dp-dark)!important; }
+.bg-dp-soft{ background: var(--dp-soft)!important; }
+.bg-dp-accent{ background: var(--dp-accent)!important; }
+
+.btn-dp-primary{
+  background: linear-gradient(135deg, var(--dp-primary), var(--dp-deep));
+  border: none;
+  color: #fff;
+}
+.btn-dp-primary:hover{ filter: brightness(1.05); }
+
+.btn-outline-dp-primary{
+  border: 1.5px solid var(--dp-deep);
+  color: var(--dp-deep);
+  background: transparent;
+}
+.btn-outline-dp-primary:hover{
+  background: var(--dp-deep);
+  color: #fff;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-gradient{
+  /* พื้นหลังโทนอ่อน สบายตา */
+  background: radial-gradient(1200px 500px at 10% -20%, #ffffff 0, var(--dp-soft) 50%, #fff 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;          /* เต็มจอ */
+  display: flex;
+  align-items: center;         /* จัดเนื้อหากึ่งกลางแนวตั้ง */
+}
+
+.hero-wave{
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(95,182,214,0.15), transparent);
+}
+
+/* รูปด้านขวาในฮีโร่ */
+.hero-img{
+  max-width: 520px;
+  width: clamp(240px, 42vw, 520px); /* responsive อย่างนุ่มนวล */
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(16,54,74,0.15);
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ป้องกันรูปทับข้อความด้วยลำดับชั้น */
+.hero-col-text { position: relative; z-index: 2; }
+.hero-col-illu { position: relative; z-index: 1; }
+
+/* แอนิเมชันลอยเบา ๆ */
+.floating{ animation: floating 6s ease-in-out infinite; }
+@keyframes floating{
+  0%,100%{ transform: translateY(0) }
+  50%{ transform: translateY(-8px) }
+}
+
+/* ---------- Cards ---------- */
+.card-service, .card-article, .card-soft{
+  border: 1px solid rgba(16,54,74,0.06);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(16,54,74,0.06);
+}
+.card-soft{ background: #fff; }
+.card-article img{ border-top-left-radius: 16px; border-top-right-radius: 16px; }
+
+/* การ์ดบริการแบบยกนิด ๆ */
+.card-service {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+.card-service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(16,54,74,0.15);
+}
+
+/* ไอคอนบริการ */
+.service-icon{
+  font-size: 30px;
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(95,182,214,.12);
+  color: var(--dp-deep);
+  margin-bottom: 12px;
+}
+
+/* ฉากหลังอีโมจิใหญ่ (ถ้าต้องการเต็มหัวการ์ด) */
+.emoji-bg {
+  font-size: 6rem;            /* ขยายอีโมจิให้ใหญ่เต็มการ์ด */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f0f8ff, #e6ecf4);
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---------- Hover Utility ---------- */
+.hover-lift{
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
+}
+.hover-lift:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(16,54,74,0.15);
+}
+
+/* ---------- Reveal on Scroll ---------- */
+.reveal{ opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.from-up{ transform: translateY(18px); }
+.reveal.from-down{ transform: translateY(-18px); }
+.reveal.from-left{ transform: translateX(-18px); }
+.reveal.from-right{ transform: translateX(18px); }
+.reveal-show{ opacity: 1; transform: translate(0,0); }
+
+/* ---------- Section Headings ---------- */
+h2{ font-weight: 800; color: var(--dp-dark); }
+
+/* ---------- Small Decorative Badge ---------- */
+.badge{ border-radius: 999px; }
+
+/* ---------- Generic Card Images ---------- */
+.card img{ object-fit: cover; height: 200px; }
+
+/* ---------- Make anchor scroll comfy ---------- */
+section{ scroll-margin-top: 80px; }
+
+/* =========================================================
+   Responsive Fixes: ป้องกันรูปบดบังข้อความใน Hero
+   ========================================================= */
+
+/* จอเล็ก */
+/* === ปรับระยะห่างรูปกับข้อความตอนจอเล็ก === */
+@media (max-width: 767.98px) {
+  .hero-col-illu {
+    margin-top: 2.5rem; /* ระยะห่างระหว่างข้อความกับรูป */
+  }
+
+  .hero-img {
+    width: min(85vw, 420px);
+    max-width: 85vw;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* จอกลาง */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-img{
+    width: min(60vw, 480px);
+    max-width: 480px;
+  }
+}
+
+/* จอใหญ่ (ปรับนิด ๆ ให้สมดุล) */
+@media (min-width: 1200px) {
+  .hero-img{
+    width: clamp(420px, 36vw, 520px);
+  }
+}
+
+/* =========================================================
+   Optional: Helper Classes สำหรับ layout เฉพาะที่
+   ========================================================= */
+
+/* เงา/กรอบเบา ๆ ให้ภาพในคอนเทนต์ทั่วไป */
+.img-elevated{
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+/* เส้นคั่นบาง ๆ โทนธีม */
+.hr-soft{
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(16,54,74,.15), transparent);
+  margin: 24px 0;
+}
