@@ -20,7 +20,7 @@ export default function PromoStrip() {
             <Col md={3} sm={6} key={i}>
               <AnimateOnScroll delay={i * 80}>
                 <div className="card card-soft hover-lift">
-                  <div className="card-body text-center">
+                  <div className="card-body text-center ">
                     <div className="badge bg-dp-accent bg-opacity-25 text-dp-deep mb-2">
                       พิเศษ
                     </div>

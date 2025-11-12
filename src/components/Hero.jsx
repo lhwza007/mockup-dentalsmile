@@ -36,7 +36,7 @@ export default function Hero() {
           >
             <AnimateOnScroll from="down" delay={80}>
               <img
-                src="https://placehold.co/600x600?text=Image"
+                src="/hero.png"
                 className="img-fluid hero-img floating"
                 alt="Dental clinic"
               />
