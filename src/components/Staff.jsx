@@ -110,8 +110,8 @@ export default function Staff() {
                   {/* ข้อมูล */}
                   <div className="px-4 pb-5 text-center">
                     <h5 className="fw-bold text-dp-dark mb-1">
-                      {doc.fullName.replace('Dr. ', '').split(' ')[1]}<br />
-                      {doc.fullName.replace('Dr. ', '').split(' ').slice(2).join(' ')}
+                      {/* {doc.fullName.replace('Dr. ', '').split(' ')[1]}<br /> */}
+                      {doc.fullName.replace('Dr. ', '').split(' ').slice(0).join(' ')}
                     </h5>
                     <p className="text-dp-primary small fw-medium">({doc.nickname})</p>
 
