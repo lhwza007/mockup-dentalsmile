@@ -6,6 +6,9 @@ import Locations from "./components/Locations.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import Knowledge from "./components/Knowledge.jsx";
 import Footer from "./components/Footer.jsx";
+import Facility from "./components/Facility.jsx";
+import DentalPricingSection from "./components/DentalPricingSection.jsx";
+import Staff from "./components/Staff.jsx";
 
 export default function App() {
   return (
@@ -14,6 +17,8 @@ export default function App() {
       <Hero />
       <PromoStrip />
       <Services />
+      <Staff/>
+      <Facility/>
       {/* <Locations /> */}
       <Testimonials />
       <Knowledge />
