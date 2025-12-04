@@ -199,3 +199,30 @@ section{ scroll-margin-top: 80px; }
   background: linear-gradient(to right, transparent, rgba(16,54,74,.15), transparent);
   margin: 24px 0;
 }
+
+
+
+.hero-banner {
+  min-height: 90vh;
+  position: relative;
+  color: #0b2e4e;
+
+  /* ลองใส่ ?v=2 กัน cache ไว้ก่อน */
+  background-image: url('banner2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.hero-text-panel {
+  background: rgba(255, 255, 255, 0.78); /* กล่องขาวโปร่ง ๆ */
+  padding: 2rem 2.4rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(3px); /* ทำให้เนียนกับพื้นหลัง */
+}
+@media (max-width: 767.98px) {
+  .hero-text-panel {
+    padding: 1.4rem 1.6rem;
+  }
+}

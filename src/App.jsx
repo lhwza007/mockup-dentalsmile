@@ -1,3 +1,4 @@
+// App.tsx
 import NavbarTop from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import PromoStrip from "./components/PromoStrip.jsx";
@@ -9,6 +10,7 @@ import Footer from "./components/Footer.jsx";
 import Facility from "./components/Facility.jsx";
 import DentalPricingSection from "./components/DentalPricingSection.jsx";
 import Staff from "./components/Staff.jsx";
+import FloatingContact from './components/FloatingContact';
 
 export default function App() {
   return (
@@ -17,12 +19,15 @@ export default function App() {
       <Hero />
       <PromoStrip />
       <Services />
-      <Staff/>
-      <Facility/>
+      <Staff />
+      <Facility />
       {/* <Locations /> */}
       <Testimonials />
       <Knowledge />
       <Footer />
+
+      {/* ย้ายมาอยู่ท้ายสุดแบบนี้ */}
+      
     </>
   );
 }
